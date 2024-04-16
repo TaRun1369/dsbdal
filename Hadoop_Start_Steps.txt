@@ -1,0 +1,79 @@
+
+hadoop@pict-OptiPlex-3020:~/Downloads$ cd
+
+
+hadoop@pict-OptiPlex-3020:~$ dir
+\ 		     How\ to\ Install\ Hadoop\ on\ Ubuntu\ 18.04\ or\ 20.04.pdf
+Desktop		     melb_data.csv
+dfsdata		     Music
+Documents	     Pictures
+Downloads	     Public
+DSBDAL		     snap
+eclipse-workspace    T190054446.ipynb
+hadoop-3.3.5	     Templates
+hadoop-3.3.5.tar.gz  tmpdata
+hadoopCode	     Untitled.ipynb
+hadoop_final.txt     Videos
+HadoopGuide
+
+
+hadoop@pict-OptiPlex-3020:~$ cd hadoop-3.3.5
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5$ dir
+bin	  include  LICENSE-binary   logs	   README.txt
+etc	  lib	   licenses-binary  NOTICE-binary  sbin
+file.txt  libexec  LICENSE.txt	    NOTICE.txt	   share
+
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5$ cd sbin
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5/sbin$ dir
+distribute-exclude.sh	 start-all.sh	      stop-dfs.cmd
+FederationStateStore	 start-balancer.sh    stop-dfs.sh
+hadoop-daemon.sh	 start-dfs.cmd	      stop-secure-dns.sh
+hadoop-daemons.sh	 start-dfs.sh	      stop-yarn.cmd
+httpfs.sh		 start-secure-dns.sh  stop-yarn.sh
+kms.sh			 start-yarn.cmd       workers.sh
+l2.txt			 start-yarn.sh	      yarn-daemon.sh
+mr-jobhistory-daemon.sh  stop-all.cmd	      yarn-daemons.sh
+refresh-namenodes.sh	 stop-all.sh
+start-all.cmd		 stop-balancer.sh
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5/sbin$ jps
+5904 NameNode
+39825 Jps
+6307 SecondaryNameNode
+6598 ResourceManager
+6057 DataNode
+39530 org.eclipse.equinox.launcher_1.6.700.v20240213-1244.jar
+6747 NodeManager
+
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5/sbin$ ./start-dfs.sh
+Starting namenodes on [localhost]
+localhost: namenode is running as process 5904.  Stop it first and ensure /tmp/hadoop-hadoop-namenode.pid file is empty before retry.
+Starting datanodes
+localhost: datanode is running as process 6057.  Stop it first and ensure /tmp/hadoop-hadoop-datanode.pid file is empty before retry.
+Starting secondary namenodes [pict-OptiPlex-3020]
+pict-OptiPlex-3020: secondarynamenode is running as process 6307.  Stop it first and ensure /tmp/hadoop-hadoop-secondarynamenode.pid file is empty before retry.
+
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5/sbin$ jps
+5904 NameNode
+40369 Jps
+6307 SecondaryNameNode
+6598 ResourceManager
+6057 DataNode
+39530 org.eclipse.equinox.launcher_1.6.700.v20240213-1244.jar
+6747 NodeManager
+
+
+hadoop@pict-OptiPlex-3020:~/hadoop-3.3.5/sbin$ ./start-yarn.sh
+Starting resourcemanager
+
